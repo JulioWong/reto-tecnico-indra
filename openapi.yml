@@ -1,0 +1,92 @@
+openapi: 3.0.0
+components:
+  schemas:
+    addPeopleResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+    getPeopleResponse:
+      type: object
+      properties:
+        nombre:
+          type: string
+        masa:
+          type: string
+        colorCabello:
+          type: string
+        fechaEdicion:
+          type: string
+        vehiculos:
+          type: array
+          items:
+            type: string
+        altura:
+          type: string
+        url:
+          type: string
+        anioNacimiento:
+          type: string
+        peliculas:
+          type: array
+          items:
+            type: string
+        navesEstelares:
+          type: array
+          items:
+            type: string
+        colorPiel:
+          type: string
+        colorOjo:
+          type: string
+        especies:
+          type: array
+          items:
+            type: string
+        fechaCreacion:
+          type: string
+        mundoNatal:
+          type: string
+        genero:
+          type: string
+  securitySchemes: {}
+info:
+  title: ''
+  description: ''
+  version: 5fda713a-cd83-4410-8797-23f4cade824a
+paths:
+  '//people/{peopleId}':
+    post:
+      operationId: addPeople
+      summary: Agregar una persona en base al peopleId indicado como parametro
+      description: 'Agregar persona, previa busqueda en el API Demo swapi por peopleId'
+      responses:
+        '200':
+          description: Persona agregada correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/addPeopleResponse'
+        '400':
+          description: Ocurrio un error en el servicio al agregar una persona
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/addPeopleResponse'
+        '500':
+          description: Ocurrio un error interno al agregar una persona
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/addPeopleResponse'
+    get:
+      operationId: getPeople
+      summary: Obtener una persona en base al peopleId indicado como parametro
+      description: Obtener una persona desde la BD DynamoDB por peopleId
+      responses:
+        '201':
+          description: Busqueda exitosa
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getPeopleResponse'

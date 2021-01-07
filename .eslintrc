@@ -1,0 +1,57 @@
+{
+  "extends": [
+    "google",
+    "eslint:recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "es6": true,
+      "classes": true,
+      "modules": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "complexity": [0, 4],
+    "eqeqeq": 2,
+    "quotes": [2, "single", { "allowTemplateLiterals": true }],
+    "filenames/match-exported": [1, [ "kebab", "snake", "camel" ] ],
+    "no-console": 1,
+    "no-dupe-keys": 2,
+    "no-else-return": 1,
+    "no-empty": 2,
+    "no-eq-null": 0,
+    "no-extra-boolean-cast": 2,
+    "no-extra-semi": 2,
+    "no-mixed-spaces-and-tabs": 2,
+    "no-param-reassign": 1,
+    "no-redeclare": 2,
+    "no-underscore-dangle": 2,
+    "no-unreachable": 2,
+    "no-unused-vars": 1,
+    "no-use-before-define": 2,
+    "no-useless-constructor": 2,
+    "no-useless-escape": 2,
+    "object-curly-spacing": [2, "always"],
+    "object-shorthand": [2, "always", { "ignoreConstructors": true, "avoidExplicitReturnArrows": false }],
+    "use-isnan": 2,
+    "require-jsdoc": 0,
+    "new-cap": 0,
+    "max-len": [2, { "code": 180 }],
+    "indent": [2, 2],
+    "block-spacing": [2, "always"],
+    "brace-style": [2, "1tbs", { "allowSingleLine": true } ],
+    "require-atomic-updates": 1,
+    "class-methods-use-this": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-named-as-default": 0,
+    "import/prefer-default-export": 0
+  }
+}
